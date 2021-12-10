@@ -43,8 +43,8 @@ namespace GeekBurger.Products.Controllers
 		}
 
 
-		[HttpGet()]
-		public IActionResult GetProductsByStoreName([FromQuery] string storeName)
+		[HttpGet("{storeName}")]
+		public IActionResult GetProductsByStoreName(string storeName)
 		{
 			var productsByStore = Products.Where(product => product.StoreName == storeName).ToList();
 
